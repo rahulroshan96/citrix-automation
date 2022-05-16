@@ -277,3 +277,6 @@ class Controller:
         for vip in list(vips_to_be_deleted_set):
             vips_to_be_deleted_list.append([vip])
         return vips_to_be_deleted_list
+
+    def create_new_vip(self):
+        self.vip_client.create_vip()

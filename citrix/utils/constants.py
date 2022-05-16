@@ -12,9 +12,8 @@ DELETE_STALE_SERVICE_GROUPS = 'delete_stale_service_groups'
 DELETE_EXPIRED_CERTS = 'delete_expired_certs'
 DELETE_VIPS = 'delete_vips'
 DELETE_STALE_VIPS = 'delete_stale_vips'
-
 DELETE_VIP_WITH_EXPIRED_CERTS = 'delete_vip_with_expired_certs'
-
+CREATE_VIP = 'create_vip'
 
 INPUT_FILE = 'input_file'
 OUTPUT_FILE = 'output_file'

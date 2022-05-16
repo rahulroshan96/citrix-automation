@@ -103,6 +103,8 @@ class Argument:
         self.my_parser.add_argument('--delete-stale-servers', action='store_true',
                                     help="Delete all servers not bounded to any services, provide input file for "
                                          "selected deletion")
+        self.my_parser.add_argument('--create-vip', action='store_true',
+                                    help="Create VIP")
         self.my_parser.add_argument('--delete-vip-with-expired-certs', action='store_true',
                                     help="Delete all VIPs bouded to expired certificates")
         self.my_parser.add_argument('--delete-expired-certs', action='store_true',

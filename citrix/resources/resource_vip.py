@@ -66,4 +66,12 @@ class VIP(Resource):
             return True
         return False
 
+    def create_vip(self):
+        import pdb;pdb.set_trace()
+        new_vip = lbvserver()
+        new_vip.name = "testVIP123"
+        new_vip.servicetype = "http"
+        result = lbvserver.add(self.client,new_vip)
+        self.logger.info("hello")
+
 
