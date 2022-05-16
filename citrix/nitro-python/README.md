@@ -13,13 +13,13 @@ Installation
 Once you have a copy of the source archive unpacked into a similarly-named directory, you can embed it in your Python package, or install it into 
 your site-packages easily:  
 
-$ python setup.py install
+$ python setup.py install`
   
 License
 -------
 Netscaler nitro python sdk is free software.  You can redistribute and modify it under the
 terms of the Apache License.  See LICENSE.txt for details.
-
+````
 Prefered Python Version
 --------------------
 This Python SDK was originally developed using python v2.7.6
