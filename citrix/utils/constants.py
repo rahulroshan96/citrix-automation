@@ -13,7 +13,7 @@ DELETE_EXPIRED_CERTS = 'delete_expired_certs'
 DELETE_VIPS = 'delete_vips'
 DELETE_STALE_VIPS = 'delete_stale_vips'
 DELETE_VIP_WITH_EXPIRED_CERTS = 'delete_vip_with_expired_certs'
-CREATE_VIP = 'create_vip'
+LIST_STALE_CS_POLICIES = "list_stale_cs_policies"
 
 INPUT_FILE = 'input_file'
 OUTPUT_FILE = 'output_file'

@@ -278,5 +278,17 @@ class Controller:
             vips_to_be_deleted_list.append([vip])
         return vips_to_be_deleted_list
 
-    def create_new_vip(self):
-        self.vip_client.create_vip()
+    def list_stale_cs_policies(self):
+        result_set = set()
+        result_list = []
+        for cs_policy_name in self.cs_policy_client.list_by_name():
+            cs_policy_mappings = self.cs_policy_client.get_cspolicy_lbserver_binding(cs_policy_name)
+            for cs_policy_mapping in cs_policy_mappings:
+                if cs_policy_mapping and hasattr(cs_policy_mapping, '_domain') and cs_policy_mapping._domain=='':
+                    result_set.add(cs_policy_name)
+                if cs_policy_mapping and not hasattr(cs_policy_mapping, '_domain'):
+                    result_set.add(cs_policy_name)
+        for result in result_set:
+            self.logger.info(result)
+            result_list.append([result])
+        return result_list

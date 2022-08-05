@@ -111,8 +111,9 @@ class Builder:
             self.result = self.controller.delete_vips(self.read_input())
         elif self.args.command == constants.DELETE_VIP_WITH_EXPIRED_CERTS:
             self.result = self.controller.delete_vips_with_expired_certs()
-        elif self.args.command == constants.CREATE_VIP:
-            self.result = self.controller.create_new_vip()
+        elif self.args.command == constants.LIST_STALE_CS_POLICIES:
+            self.result = self.controller.list_stale_cs_policies()
+
 
     def read_input(self):
         if self.args.has_input_file():

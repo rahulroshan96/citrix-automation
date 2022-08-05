@@ -78,6 +78,8 @@ class Argument:
 
         self.my_parser.add_argument('--list-stale-vips', action='store_true', help="List all the VIPs not bounded "
                                                                                    "to any services/SGs")
+        self.my_parser.add_argument('--list-stale-cs-policies', action='store_true', help="List CS policies not "
+                                                                                          "bounded to any vServer")
 
         self.my_parser.add_argument('--list-down-vips', action='store_true', help="List all the down vips")
 
