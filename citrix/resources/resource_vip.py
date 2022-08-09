@@ -5,7 +5,7 @@ from nitro.resource.config.lb.lbvserver_service_binding import lbvserver_service
 from nitro.resource.config.lb.lbvserver_servicegroup_binding import \
     lbvserver_servicegroup_binding
 from citrix.utils import constants
-
+from citrix.utils.utils import get_pagination_all
 
 class VIP(Resource):
     def __init__(self, client, logger):
@@ -20,7 +20,8 @@ class VIP(Resource):
         return result
 
     def list_vips_by_object(self):
-        return lbvserver.get(self.client)
+        self.logger.info("Gathering LBVservers..Please Wait...")
+        return get_pagination_all(lbvserver, self.client)
 
     def delete(self, vip_name):
         try:

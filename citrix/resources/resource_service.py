@@ -1,6 +1,7 @@
 from .resource import Resource
 import traceback
 from nitro.resource.config.basic.service import service
+from citrix.utils.utils import get_pagination_all
 
 
 class Service(Resource):
@@ -15,7 +16,8 @@ class Service(Resource):
         return result
 
     def list_by_object(self):
-        return service.get(self.client)
+        self.logger.info("Gathering Services..Please Wait...")
+        return get_pagination_all(service, self.client)
 
     def delete(self, service_name):
         try:

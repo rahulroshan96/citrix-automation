@@ -3,6 +3,7 @@ import traceback
 from nitro.resource.config.ssl.sslcertkey import sslcertkey
 from nitro.resource.config.ssl.sslcertkey_binding import sslcertkey_binding
 from citrix.utils import constants
+from citrix.utils.utils import get_pagination_all
 
 class SSLCertKey(Resource):
     def __init__(self, client, logger):
@@ -16,7 +17,8 @@ class SSLCertKey(Resource):
         return result
 
     def list_by_object(self):
-        return sslcertkey.get(self.client)
+        self.logger.info("Gathering SSLCertKeys..Please Wait...")
+        return get_pagination_all(sslcertkey, self.client)
 
     def list_expired_certs(self):
         result = []

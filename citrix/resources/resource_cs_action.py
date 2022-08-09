@@ -1,6 +1,7 @@
 from .resource import Resource
 import traceback
 from nitro.resource.config.cs.csaction import csaction
+from citrix.utils.utils import get_pagination_all
 
 class CSAction(Resource):
     def __init__(self, client, logger):
@@ -14,7 +15,8 @@ class CSAction(Resource):
         return result
 
     def list_by_object(self):
-        return csaction.get(self.client)
+        self.logger.info("Gathering Actions..Please Wait...")
+        return get_pagination_all(csaction, self.client)
 
     def get(self, action_name):
         return csaction.get(self.client, action_name)

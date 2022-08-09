@@ -1,7 +1,7 @@
 from .resource import Resource
 from nitro.resource.config.cs.csvserver_cspolicy_binding import csvserver_cspolicy_binding
 from nitro.resource.config.cs.csvserver import csvserver
-
+from citrix.utils.utils import get_pagination_all
 
 class CSVServer(Resource):
     def __init__(self, client, logger):
@@ -15,7 +15,8 @@ class CSVServer(Resource):
         return result
 
     def list_by_object(self):
-        return csvserver.get(self.client)
+        self.logger.info("Gathering VServers..Please Wait...")
+        return get_pagination_all(csvserver,self.client)
 
     def delete(self, server_name):
         pass

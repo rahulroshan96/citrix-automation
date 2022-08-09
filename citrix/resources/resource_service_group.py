@@ -1,7 +1,7 @@
 from .resource import Resource
 import traceback
 from nitro.resource.config.basic.servicegroup import servicegroup
-
+from citrix.utils.utils import get_pagination_all
 
 class ServiceGroup(Resource):
     def __init__(self, client, logger):
@@ -15,7 +15,8 @@ class ServiceGroup(Resource):
         return result
 
     def list_by_object(self):
-        return servicegroup.get(self.client)
+        self.logger.info("Gathering ServicesGroups..Please Wait...")
+        return get_pagination_all(servicegroup, self.client)
 
     def delete(self, sg_name):
         try:

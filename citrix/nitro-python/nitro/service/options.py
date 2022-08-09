@@ -214,11 +214,11 @@ class options(object):
         try: 
             options_str = ""
             if (self._pageno > 0): 
-                options_str = "pageno="+self._pageno
+                options_str = "pageno="+str(self._pageno)
             if (self._pagesize > 0): 
                 if (len(options_str) > 0):
                     options_str = options_str + "&"
-                options_str = options_str +"pagesize="+self._pagesize
+                options_str = options_str +"pagesize="+str(self._pagesize)
         
             if self._detailview is True: 
                 if options_str :
